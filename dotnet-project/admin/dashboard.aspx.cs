@@ -20,16 +20,11 @@ namespace dotnet_project.admin
             {
                 con.Open();
 
-
-                //SqlCommand admin_cmd = new SqlCommand("SELECT id, name FROM [user] WHERE type='ADMIN'", con);
-                SqlCommand cmd = new SqlCommand("SELECT * FROM [user]", con);
+                SqlCommand cmd = new SqlCommand("SELECT id, name, type FROM [user]", con);
                 SqlDataReader sdr = cmd.ExecuteReader();
 
                 GridView1.DataSource = sdr;
                 GridView1.DataBind();
-
-
-
 
             }
             catch (Exception ex)
@@ -42,5 +37,80 @@ namespace dotnet_project.admin
             }
 
         }
+
+        protected void addBtn_Click(object sender, EventArgs e)
+        {
+
+            string id = newUserID.Text;
+            string name = newUserName.Text;
+            string type = newUserType.SelectedValue;
+
+            if ((id != "") && (name != ""))
+            {
+                SqlConnection con = new SqlConnection
+                    ("Data Source =.\\SQLEXPRESS; Initial Catalog = DotNetProject; Integrated Security = True; Pooling = False");
+
+                try
+                {
+                    con.Open();
+                    SqlDataAdapter cmd = new SqlDataAdapter();
+
+                    cmd.InsertCommand = new SqlCommand
+                        ("INSERT INTO [user] VALUES ('" + id + "', '" + name + "', '" + id + "', '" + type + "'); ", con);
+
+                    cmd.InsertCommand.ExecuteNonQuery();
+
+                    add_msg.InnerHtml = "Added!";
+                }
+                catch (Exception ex)
+                {
+                    add_msg.InnerHtml = ex.ToString();
+                }
+                finally
+                {
+                    con.Close();
+
+                    Response.Redirect(Page.Request.Url.ToString(), true);
+                }
+            }
+
+        }
+
+        protected void deleteBtn_Click(object sender, EventArgs e)
+        {
+
+            string id = selectedUserID.Text;
+
+            if (id != "")
+            {
+                SqlConnection con = new SqlConnection
+                    ("Data Source =.\\SQLEXPRESS; Initial Catalog = DotNetProject; Integrated Security = True; Pooling = False");
+
+                try
+                {
+                    con.Open();
+                    SqlDataAdapter cmd = new SqlDataAdapter();
+
+                    cmd.InsertCommand = new SqlCommand
+                        ("DELETE FROM [user] WHERE id = '" + id + "'", con);
+
+                    cmd.InsertCommand.ExecuteNonQuery();
+
+                }
+                catch (Exception ex)
+                {
+                    delete_msg.InnerHtml = ex.ToString();
+                }
+                finally
+                {
+                    con.Close();
+
+                    Response.Redirect(Page.Request.Url.ToString(), true);
+                }
+            }
+
+
+        }
+
     }
 }
