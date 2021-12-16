@@ -13,7 +13,12 @@ namespace dotnet_project
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            // TODO: Add validation (if user already login)
+
+            if (Session["userid"] != null && Session["username"] != null && Session["usertype"] != null)
+            {
+                Response.Redirect("/" + Session["usertype"].ToString().ToLower() + "/dashboard.aspx");
+            }
+
         }
 
         protected void loginBtn_Click(object sender, EventArgs e)
@@ -39,9 +44,13 @@ namespace dotnet_project
                     string usertype = sdr.GetString(3);
                     tempLabel.Text = "Login Success. | User Type - " + usertype;
 
-                    Response.Redirect("/" + usertype.ToLower() + "/dashboard.aspx");
+                    Session["userid"] = sdr.GetString(0);
+                    Session["username"] = sdr.GetString(1);
+                    Session["usertype"] = sdr.GetString(3);
 
-                    // TODO: Starr session when user login
+                    con.Close();
+
+                    Response.Redirect("/" + usertype.ToLower() + "/dashboard.aspx");
 
                 }
                 else

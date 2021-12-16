@@ -13,6 +13,18 @@ namespace dotnet_project.admin
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Session["userid"] == null || Session["username"] == null || Session["usertype"] == null)
+            {
+                Response.Redirect("/login.aspx");
+            }
+
+            string id = Session["userid"].ToString();
+            string name = Session["username"].ToString();
+            string type = Session["usertype"].ToString();
+
+            if (type.ToLower() != "admin")
+                Response.Redirect("/login.aspx");
+
             SqlConnection con = new SqlConnection
                 ("Data Source =.\\SQLEXPRESS; Initial Catalog = DotNetProject; Integrated Security = True; Pooling = False");
 
@@ -109,8 +121,6 @@ namespace dotnet_project.admin
                 }
             }
 
-
         }
-
     }
 }

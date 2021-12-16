@@ -34,8 +34,12 @@
                     <a class="navbar-brand" href="/Default.aspx">
                         <img src="/img/logo.png" alt="">
                     </a>
+
+                    <asp:Button ID="logoutBtn" runat="server" Text="LOGOUT" CssClass="btn btn-danger" OnClick="logoutBtn_Click" />
                 </div>
             </nav>
+
+
 
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
             </asp:ContentPlaceHolder>
