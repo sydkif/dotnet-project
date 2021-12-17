@@ -32,11 +32,21 @@ namespace dotnet_project.admin
             {
                 con.Open();
 
-                SqlCommand cmd = new SqlCommand("SELECT id, name, type FROM [user]", con);
-                SqlDataReader sdr = cmd.ExecuteReader();
+                SqlCommand cmd1 = new SqlCommand("SELECT id, name, type FROM [user]", con);
+                SqlDataReader sdr1 = cmd1.ExecuteReader();
 
-                GridView1.DataSource = sdr;
+                GridView1.DataSource = sdr1;
                 GridView1.DataBind();
+
+                con.Close();
+
+                con.Open();
+
+                SqlCommand cmd2 = new SqlCommand("SELECT * FROM [subject]", con);
+                SqlDataReader sdr2 = cmd2.ExecuteReader();
+
+                GridView2.DataSource = sdr2;
+                GridView2.DataBind();
 
             }
             catch (Exception ex)
@@ -47,6 +57,8 @@ namespace dotnet_project.admin
             {
                 con.Close();
             }
+
+
 
         }
 
@@ -105,6 +117,78 @@ namespace dotnet_project.admin
 
                     cmd.InsertCommand = new SqlCommand
                         ("DELETE FROM [user] WHERE id = '" + id + "'", con);
+
+                    cmd.InsertCommand.ExecuteNonQuery();
+
+                }
+                catch (Exception ex)
+                {
+                    delete_msg.InnerHtml = ex.ToString();
+                }
+                finally
+                {
+                    con.Close();
+
+                    Response.Redirect(Page.Request.Url.ToString(), true);
+                }
+            }
+
+        }
+
+        protected void addNewSubBtn_Click(object sender, EventArgs e)
+        {
+
+            string id = newSubID.Text;
+            string name = newSubName.Text;
+
+            if ((id != "") && (name != ""))
+            {
+                SqlConnection con = new SqlConnection
+                    ("Data Source =.\\SQLEXPRESS; Initial Catalog = DotNetProject; Integrated Security = True; Pooling = False");
+
+                try
+                {
+                    con.Open();
+                    SqlDataAdapter cmd = new SqlDataAdapter();
+
+                    cmd.InsertCommand = new SqlCommand
+                        ("INSERT INTO [subject] VALUES ('" + id + "', '" + name + "'); ", con);
+
+                    cmd.InsertCommand.ExecuteNonQuery();
+
+                    add_msg.InnerHtml = "Added!";
+                }
+                catch (Exception ex)
+                {
+                    add_msg.InnerHtml = ex.ToString();
+                }
+                finally
+                {
+                    con.Close();
+
+                    Response.Redirect(Page.Request.Url.ToString(), true);
+                }
+            }
+
+        }
+
+        protected void deleteSubBtn_Click(object sender, EventArgs e)
+        {
+
+            string id = selectedSubID.Text;
+
+            if (id != "")
+            {
+                SqlConnection con = new SqlConnection
+                    ("Data Source =.\\SQLEXPRESS; Initial Catalog = DotNetProject; Integrated Security = True; Pooling = False");
+
+                try
+                {
+                    con.Open();
+                    SqlDataAdapter cmd = new SqlDataAdapter();
+
+                    cmd.InsertCommand = new SqlCommand
+                        ("DELETE FROM [subject] WHERE id = '" + id + "'", con);
 
                     cmd.InsertCommand.ExecuteNonQuery();
 
