@@ -1,0 +1,128 @@
+<tr>
+<td class*"auto-style?">
+<asp:Label ID="IblMane" runat="server” Texte"
+H/td>
+class="auto-stylet” >
+<asp:TextBox ID="txtName" runat="server" CssClass="auto-styles"
+Widthe"173px" ></asp:TextBox>
+‘<asp:RequiredFicldValidator ID="rvMame" runat="server”
+ControlToValidate="txtName” ErrorMessage="Please enter your name"
+ForeColor="Red"></asp:RequiredF ieldValidator>
+</td>
+</tr>
+<tr>
+<td class*"auto-style?">
+<asp:Label ID="Ib1Tel" runat="server” Text="Mobile No. (+60)"
+
+ 
+
+jae” ></asp:Label>
+
+<td
+
+ 
+
+></asp:Label>
+re/td>
+classe"auto-styleo” >
+<asp:TextBox ID="txtTeINo” runat="server" Width="173px" ></asp:TextBox>
+<asp:RequiredFieldValidator ID="rvTel” runat="server"
+ControlToValidate="txtTelNo” ErrorMessage="Please enter your mobile number”
+ForeColors"Red"></asp: RequiredF ieldValidator>
+</td>
+<ite>
+cte>
+<td class="auto-style7">
+<asp:Label ID="Ib1CarName" runat="server" Text="Car Name” ></asp:Label>
+re/td>
+class="auto-style1” >
+popDounList ID="ddlCar" runat="server">
+ListItemProton Exorac/asp:ListItem>
+ListItemPerodua Myvic/asy
+<asp:ListItemProton Sagac/asy
+
+«td
+
+«td
+
+   
+
+   
+
+ 
+
+DropDownList >
+
+ 
+
+<td class="auto-style7">
+<asp:Label ID="Label1" runat:
+BorderStyle="None" ></asp:Label>
+re/td>
+<td class="auto-stylei” >
+
+ 
+
+erver” Text="buration (in hour)"
+
+<asp:DropDownList.
+ListItem
+
+ 
+
+<asp:ListItem
+<asp:ListItem
+
+  
+
+ListItem
+<asp:ListItem
+<asp:ListItem
+
+ListItem
+<asp:ListItem
+<asp:ListItem
+ListItem
+ListItem
+<asp:ListItem
+<asp:ListItem
+<asp:ListItem
+<asp:ListItem
+<asp:ListItem
+éasp:ListItem
+
+  
+ 
+ 
+
+ 
+
+ 
+
+‘D="DropDownList1" runat="server">
+Value="1"></asp:ListItem>
+Value="2"></asp:ListItem>
+Value="3"></asp:
+Value="4"></asp:
+Value="5"></asp:
+Value="6"></asp:
+Value="7"></asp:
+Value="8"></asp:
+</asp:
+
+ 
+
+Value="11"></as|
+Value="12"></as|
+Value="13"></as|
+Value="14"></as|
+Value="15"></as|
+Value="16"></as|
+Value="17"></as|
+Value="18"></as|
+Value="19"></asy
+
+  
+
+ 
+

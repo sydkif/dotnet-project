@@ -75,6 +75,7 @@
     <Content Include="img\logo.png" />
     <Content Include="lecturer\create\assignment.aspx" />
     <Content Include="lecturer\dashboard.aspx" />
+    <Content Include="lecturer\view\submission.aspx" />
     <Content Include="login.aspx" />
     <Content Include="student\dashboard.aspx" />
     <Content Include="Web.config" />
@@ -107,6 +108,13 @@
     </Compile>
     <Compile Include="lecturer\dashboard.aspx.designer.cs">
       <DependentUpon>dashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="lecturer\view\submission.aspx.cs">
+      <DependentUpon>submission.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="lecturer\view\submission.aspx.designer.cs">
+      <DependentUpon>submission.aspx</DependentUpon>
     </Compile>
     <Compile Include="login.aspx.cs">
       <DependentUpon>login.aspx</DependentUpon>

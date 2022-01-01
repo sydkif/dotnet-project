@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+
+<html xmlns="http: //imen.w3.0rg/1999/xhtml">
+<head runat="server">
+<titlescar Booking Forn</title>
+</neaa>
+<body>
+<form ide"form1” runat="server">
+<div>
+<style type="text/css">
+-Gridview {
+font-family: verdana
+font-size: 10pt}
+font-weight: normal;
+color: black;
+
+ 
+
+-auto-style1 {
+width: 1426px3
+?
+
+-auto-style2 {
+height: 19px;
+text-align:center;
+?
+-auto-styles {
+height: 30px;
+text-align: center;
+
+?
+
+vauto-style7 {
+width: 14gepx;
+text-align: right;
+
+vauto-styles {
+width: 1426px3
+height: 26px}
+
+-auto-styleze {
+width: 1480px3
+text-align: right;
+height: 3epx;
+
++
+-auto-stylei {
+width: 1426px5
+height: 3epx;
+t
+cystyle>
+<script type="text/Jjavascript">
+</script>
+<p class="auto-style3">
+<center>
+<br/>
+<asp:Label ID="Label6” runat="server" Font-Bold="True” Font-Size="X-Large”
+‘Text="CAR BOOKING FORM"></asp:Label>
+<br />
+<br />
+</center>
+etable>
+
