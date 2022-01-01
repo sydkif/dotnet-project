@@ -10,7 +10,7 @@ namespace dotnet_project.lecturer
     public partial class dashboard : System.Web.UI.Page // Lecturer
     {
         protected void Page_Load(object sender, EventArgs e)
-        {
+        { 
 
             if (Session["userid"] == null || Session["username"] == null || Session["usertype"] == null)
             {
@@ -24,7 +24,7 @@ namespace dotnet_project.lecturer
             if (type.ToLower() != "lecturer")
                 Response.Redirect("/login.aspx");
 
-            welcomeMsg.Text = "Welcome, " + name + "!";
+            welcomeMsg.Text = "<b>Welcome, " + name + "!</b>";
 
         }
     }

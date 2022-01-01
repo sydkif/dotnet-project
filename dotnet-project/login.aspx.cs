@@ -50,7 +50,14 @@ namespace dotnet_project
 
                     con.Close();
 
-                    Response.Redirect("/" + usertype.ToLower() + "/dashboard.aspx");
+                    if (username == password)
+                    {
+                        Response.Redirect("/change-password.aspx");
+                    }
+                    else
+                    {
+                        Response.Redirect("/" + usertype.ToLower() + "/dashboard.aspx");
+                    }
 
                 }
                 else
