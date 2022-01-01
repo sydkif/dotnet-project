@@ -7,69 +7,42 @@
     <div class="container">
         <div class="row mt-3">
 
-            <div class="col" id="subjectList">
+            <div class="col">
 
                 <asp:Label ID="welcomeMsg" runat="server" Text="Label" CssClass="fs-2"></asp:Label>
                 <hr />
 
-                <div class="card" runat="server">
-
-                    <div class="card-header">
-                        <b class="fs-4">Subject Name</b>
-                    </div>
-
+                <div class="card text-dark bg-light mb-3">
+                    <div class="card-header fs-4"><b>Assigned Subject</b></div>
                     <div class="card-body">
 
-                        <table class="table">
-
-                            <thead>
-                                <tr>
-                                    <th style="text-align: center;">No</th>
-                                    <th style="text-align: left;">Title</th>
-                                    <th style="text-align: left;">Filename</th>
-                                    <th style="text-align: center;">Content</th>
-                                    <th style="text-align: center;">Submission</th>
-                                    <th style="text-align: center;">Delete</th>
-                                </tr>
-                            </thead>
-
-                            <tbody>
-                                <% 
-                                    for (int x = 0; x < 5; x++)
-                                    {
-                                %>
-                                <tr>
-                                    <th style="text-align: center;">
-                                        <% Response.Write(x + 1); %>
-                                    </th>
-                                    <td>
-                                        Assignment <% Response.Write(x + 1); %> 
-                                    </td>
-                                    <td>
-                                        Assignment <% Response.Write(x + 1); %>.docx
-                                    </td>
-                                    <td>
-
-                                    </td>
-                                    <td>
-
-                                    </td>
-                                    <td>
-
-                                    </td>
-                                </tr>
-
-                                <% } %>
-                            </tbody>
-
-                        </table>
+                        <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="false" CssClass="table">
+                            <Columns>
+                                <asp:BoundField HeaderText="Subject ID" DataField="subject_id" />
+                                <asp:BoundField HeaderText="Subject Name" DataField="subject_name" />
+                                <asp:TemplateField ShowHeader="False">
+                                    <ItemTemplate>
+                                        <asp:Button ID="Button1" runat="server" CausesValidation="false" CommandName="ViewAssignment"
+                                            Text="View Assignment" CssClass="btn btn-dark" />
+                                    </ItemTemplate>
+                                </asp:TemplateField>
+                            </Columns>
+                        </asp:GridView>
                     </div>
-
-
                 </div>
+                <hr />
+
             </div>
 
+            <asp:Label ID="error_msg" runat="server" Text="Label"></asp:Label>
+
+
         </div>
+    </div>
 </asp:Content>
 
 <%-- Lecturer --%>
+
+
+
+

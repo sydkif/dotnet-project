@@ -1,16 +1,24 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Data;
+using System.Data.SqlClient;
 
 namespace dotnet_project.lecturer
 {
     public partial class dashboard : System.Web.UI.Page // Lecturer
     {
+
+        SqlConnection con = new SqlConnection
+                ("Data Source =.\\SQLEXPRESS; Initial Catalog = DotNetProject; Integrated Security = True; Pooling = False");
+
         protected void Page_Load(object sender, EventArgs e)
-        { 
+        {
+            string output = "";
 
             if (Session["userid"] == null || Session["username"] == null || Session["usertype"] == null)
             {
@@ -26,6 +34,46 @@ namespace dotnet_project.lecturer
 
             welcomeMsg.Text = "<b>Welcome, " + name + "!</b>";
 
+            SqlConnection con = new SqlConnection
+                            ("Data Source =.\\SQLEXPRESS; Initial Catalog = DotNetProject; Integrated Security = True; Pooling = False");
+
+            try
+            {
+                con.Open();
+
+                SqlCommand cmd1 = new SqlCommand
+                    ("SELECT s.name AS subject_name, s.id AS subject_id FROM SUBJECT S JOIN [workload] wl ON s.id = wl.subject_id  JOIN [user] l ON wl.lecturer_id = l.id WHERE l.id = '" + id + "';", con);
+                SqlDataReader sdr1 = cmd1.ExecuteReader();
+
+                GridView1.DataSource = sdr1;
+                GridView1.DataBind();
+
+                con.Close();
+
+            }
+            catch (Exception ex)
+            {
+                error_msg.Text = ex.ToString();
+            }
+            finally
+            {
+                con.Close();
+            }
+
+            if (Session["error_msg"] != null)
+            {
+                error_msg.Text = Session["error_msg"].ToString();
+            }
+
+            Session["error_msg"] = "";
+
         }
     }
+}
+
+
+public class Subject
+{
+    public string id { get; set; }
+    public string name { get; set; }
 }

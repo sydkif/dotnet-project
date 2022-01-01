@@ -74,8 +74,10 @@
     <Content Include="img\bg.jpg" />
     <Content Include="img\logo.png" />
     <Content Include="lecturer\dashboard.aspx" />
+    <Content Include="lecturer\l-assignment.aspx" />
     <Content Include="login.aspx" />
     <Content Include="student\dashboard.aspx" />
+    <Content Include="student\s-assignment.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -100,6 +102,13 @@
     <Compile Include="lecturer\dashboard.aspx.designer.cs">
       <DependentUpon>dashboard.aspx</DependentUpon>
     </Compile>
+    <Compile Include="lecturer\l-assignment.aspx.cs">
+      <DependentUpon>l-assignment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="lecturer\l-assignment.aspx.designer.cs">
+      <DependentUpon>l-assignment.aspx</DependentUpon>
+    </Compile>
     <Compile Include="login.aspx.cs">
       <DependentUpon>login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -121,6 +130,13 @@
     </Compile>
     <Compile Include="student\dashboard.aspx.designer.cs">
       <DependentUpon>dashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="student\s-assignment.aspx.cs">
+      <DependentUpon>s-assignment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="student\s-assignment.aspx.designer.cs">
+      <DependentUpon>s-assignment.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

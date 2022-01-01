@@ -79,7 +79,12 @@
                 <div class="card text-dark bg-light  my-2 shadow-sm">
                     <div class="card-header fs-4"><b>Subject List</b></div>
                     <div class="card-body">
-                        <asp:GridView ID="GridView2" runat="server" CssClass="table"></asp:GridView>
+                        <asp:GridView ID="GridView2" runat="server" AutoGenerateColumns="false" CssClass="table">
+                            <Columns>
+                                <asp:BoundField HeaderText="ID" DataField="id" />
+                                <asp:BoundField HeaderText="Name" DataField="name" />
+                            </Columns>
+                        </asp:GridView>
                     </div>
                 </div>
 
@@ -126,7 +131,12 @@
                 <div class="card text-dark bg-light mb-3">
                     <div class="card-header fs-4"><b>Lecturer Workload</b></div>
                     <div class="card-body">
-                        <asp:GridView ID="GridView3" runat="server" CssClass="table"></asp:GridView>
+                        <asp:GridView ID="GridView3" runat="server" AutoGenerateColumns="false" CssClass="table">
+                            <Columns>
+                                <asp:BoundField HeaderText="Lecturer ID" DataField="lecturer_id" />
+                                <asp:BoundField HeaderText="Subject ID" DataField="subject_id" />
+                            </Columns>
+                        </asp:GridView>
                     </div>
                 </div>
 
