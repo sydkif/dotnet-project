@@ -11,6 +11,7 @@ namespace dotnet_project.admin
 {
     public partial class dashboard : System.Web.UI.Page
     {
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (Session["userid"] == null || Session["username"] == null || Session["usertype"] == null)
@@ -70,7 +71,11 @@ namespace dotnet_project.admin
                 lecturerList.DataTextField = ds1.Tables[0].Columns["name"].ToString();
                 lecturerList.DataValueField = ds1.Tables[0].Columns["id"].ToString();
                 lecturerList.DataSource = ds1.Tables[0];
-                lecturerList.DataBind();
+                if (!Page.IsPostBack)
+                {
+                    lecturerList.DataBind();
+                }
+
 
                 con.Close();
 
@@ -84,7 +89,10 @@ namespace dotnet_project.admin
                 subjectList.DataTextField = ds2.Tables[0].Columns["name"].ToString();
                 subjectList.DataValueField = ds2.Tables[0].Columns["id"].ToString();
                 subjectList.DataSource = ds2.Tables[0];
-                subjectList.DataBind();
+                if (!Page.IsPostBack)
+                {
+                    subjectList.DataBind();
+                }
 
             }
             catch (Exception ex)
@@ -253,7 +261,7 @@ namespace dotnet_project.admin
         protected void assignWorkload_Click(object sender, EventArgs e)
         {
             string lecturer = lecturerList.SelectedValue;
-            string subject = lecturerList.SelectedValue;
+            string subject = subjectList.SelectedValue;
 
             if ((lecturer != "") && (subject != ""))
             {
@@ -319,6 +327,16 @@ namespace dotnet_project.admin
                     Response.Redirect(Page.Request.Url.ToString(), true);
                 }
             }
+
+        }
+
+        protected void lecturerList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void subjectList_SelectedIndexChanged(object sender, EventArgs e)
+        {
 
         }
 

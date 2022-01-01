@@ -142,16 +142,16 @@
 
                         <p>Please select a lecturer and a subject</p>
                         <b>Lecturer</b><br />
-                        <asp:DropDownList ID="lecturerList" runat="server" Height="36px" Width="50%">
+                        <asp:DropDownList ID="lecturerList" runat="server" Height="36px" Width="50%" OnSelectedIndexChanged="lecturerList_SelectedIndexChanged">
                         </asp:DropDownList>
                         <br />
                         <b>Subject</b><br />
-                        <asp:DropDownList ID="subjectList" runat="server" Height="36px" Width="50%">
+                        <asp:DropDownList ID="subjectList" runat="server" Height="36px" Width="50%" OnSelectedIndexChanged="subjectList_SelectedIndexChanged">
                         </asp:DropDownList>
                         <br />
                         <br />
                         <asp:Button ID="assignWorkloadBtn" runat="server" CssClass="btn btn-success"
-                            Text="Add" OnClick="assignWorkload_Click" OnClientClick="return confirm('Are you sure?')" />
+                            Text="Assign" OnClick="assignWorkload_Click" OnClientClick="return confirm('Are you sure?')" />
                         <span runat="server" id="Span3"></span>
                     </div>
                 </div>
