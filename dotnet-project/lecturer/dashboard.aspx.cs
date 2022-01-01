@@ -18,7 +18,6 @@ namespace dotnet_project.lecturer
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            string output = "";
 
             if (Session["userid"] == null || Session["username"] == null || Session["usertype"] == null)
             {
@@ -42,7 +41,8 @@ namespace dotnet_project.lecturer
                 con.Open();
 
                 SqlCommand cmd1 = new SqlCommand
-                    ("SELECT s.name AS subject_name, s.id AS subject_id FROM SUBJECT S JOIN [workload] wl ON s.id = wl.subject_id  JOIN [user] l ON wl.lecturer_id = l.id WHERE l.id = '" + id + "';", con);
+                    ("SELECT s.name AS subject_name, s.id AS subject_id FROM SUBJECT S JOIN [workload] wl ON s.id = wl.subject_id  " +
+                    "JOIN [user] l ON wl.lecturer_id = l.id WHERE l.id = '" + id + "';", con);
                 SqlDataReader sdr1 = cmd1.ExecuteReader();
 
                 GridView1.DataSource = sdr1;
@@ -68,7 +68,28 @@ namespace dotnet_project.lecturer
             Session["error_msg"] = "";
 
         }
+
+        protected void viewAssignment_Click(object sender, EventArgs e)
+        {
+
+            //Get the button that raised the event
+            Button btn = (Button)sender;
+
+            //Get the row that contains this button
+            GridViewRow gvr = (GridViewRow)btn.NamingContainer;
+
+            string id, name;
+            id = gvr.Cells[0].Text.ToString();
+            name = gvr.Cells[1].Text.ToString();
+
+            error_msg.Text = id;
+
+            Response.Redirect("create/assignment.aspx?id=" + id + "&name=" + name);
+
+        }
+
     }
+
 }
 
 
