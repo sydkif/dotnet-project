@@ -52,7 +52,6 @@
                                         <asp:Button ID="Button4" runat="server" Text="Delete"
                                             CssClass="btn btn-danger" OnClick="deleteBtn_Click" OnClientClick="return confirm('Are you sure?')" />
                                     </ItemTemplate>
-
                                 </asp:TemplateField>
                             </Columns>
                         </asp:GridView>

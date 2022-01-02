@@ -78,6 +78,7 @@
     <Content Include="lecturer\view\submission.aspx" />
     <Content Include="login.aspx" />
     <Content Include="student\dashboard.aspx" />
+    <Content Include="student\view\assignment.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -137,6 +138,13 @@
     </Compile>
     <Compile Include="student\dashboard.aspx.designer.cs">
       <DependentUpon>dashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="student\view\assignment.aspx.cs">
+      <DependentUpon>assignment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="student\view\assignment.aspx.designer.cs">
+      <DependentUpon>assignment.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

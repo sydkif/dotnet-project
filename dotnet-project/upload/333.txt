@@ -1,0 +1,109 @@
+<asp:ListItem Value="20"></asp:ListItem>
+
+   
+
+cast "2a" ></asp:Listitem>
+«ash
+«asi
+cast "24"></asp:Listitem>
+</aspi
+</td>
+</tr>
+<tr>
+
+<td class="auto-style7">
+<asp:Label 1D="IblLicense" runa‘
+one" ></asp:Label>
+/td>
+<td class="auto-stylei" >
+<asp:Fileupload 10="FileUploadi" runat="server” />
+</td>
+</tr>
+<tr>
+<td class="auto-style1e">
+<asp:Label 1D="Labels" runat="server" Tex!
+re/td>
+«td class="auto-style11" >
+<asp: TextBox ID="txtoate" runat="server" Textiode="Date" widt!
+></asp:TextBox>
+<asp:RequiredFieldvalidator 10="rvoate” runat="server"
+ControlTovalidate="txtoate" Errortessage="Please enter date”
+ForeColor="Red"></asp:RequiredFieldvalidator></td>
+
+  
+
+server" Text="Driving License”
+
+ 
+
+Borderstyle="
+
+ 
+
+ 
+
+  
+
+ 
+
+    
+
+   
+
+  
+
+   
+
+   
+
+</tr>
+<tr>
+<td class="auto-stylea" colspa
+<br />
+<asp:Button ID="btnSave” runat="server" Text="Save" width="131px" />
+<asp:Button ID="btnDelete” runat="server" Text="Delete” width="127px" />
+<asp:Button ID="btnClear” runat="server" Text="Clear” width="137px" />
+<br />
+</td>
+</tr>
+<tr>
+<td class="auto-style2" colspan="2">
+
+   
+
+<asp:Label 1D="Iblsuccesstessage” runat="server” Text:
+
+ 
+
+></asp:Label>
+</td>
+</tr>
+<tr>
+<td class="auto-style2" colspan="2">
+<esp:Label 1D="Iblerrormessage” runa'
+ForeColor="Red"></asp:Label>
+<br />
+</td>
+
+    
+
+'server" Text="
+
+  
+
+</tr>
+<a
+Displaymode
+</table>
+</div>
+</form>
+</body>
+</html>
+
+:Validationsummary ID="Validationsummary1” runat="server”
+‘BulletList™ ShowSummary ="true” HeaderText="Errors:" />
+
+ 
+
+ 
+

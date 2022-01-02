@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage/MasterPage.Master" AutoEventWireup="true" CodeBehind="dashboard.aspx.cs" Inherits="dotnet_project.student.dashboard"enableEventValidation="false" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage/MasterPage.Master" AutoEventWireup="true" CodeBehind="dashboard.aspx.cs" Inherits="dotnet_project.student.dashboard" enableEventValidation="false" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
@@ -23,8 +23,8 @@
                                 <asp:BoundField HeaderText="Subject Name" DataField="subject_name" />
                                 <asp:TemplateField ShowHeader="False">
                                     <ItemTemplate>
-                                        <asp:Button ID="Button1" runat="server" CausesValidation="false"
-                                            Text="View Assignment" CssClass="btn btn-dark" />
+                                        <asp:Button ID="Button1" runat="server" CausesValidation="false" CommandName="ViewAssignment"
+                                            Text="View Assignment" CssClass="btn btn-dark" OnClick="viewAssBtn_click" />
                                     </ItemTemplate>
                                 </asp:TemplateField>
                             </Columns>

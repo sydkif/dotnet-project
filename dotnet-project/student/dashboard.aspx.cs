@@ -80,6 +80,24 @@ namespace dotnet_project.student
 
         }
 
+        protected void viewAssBtn_click(object sender, EventArgs e)
+        {
+
+            //Get the button that raised the event
+            Button btn = (Button)sender;
+
+            //Get the row that contains this button
+            GridViewRow gvr = (GridViewRow)btn.NamingContainer;
+
+            string id, name;
+            id = gvr.Cells[0].Text.ToString();
+            name = gvr.Cells[1].Text.ToString();
+
+            tempLabel.Text = id;
+
+            Response.Redirect("view/assignment.aspx?id=" + id + "&name=" + name);
+        }
+
         protected void regSubjectBtn_Click(object sender, EventArgs e)
         {
 

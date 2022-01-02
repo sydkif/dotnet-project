@@ -136,3 +136,7 @@ a#back:active {
 .btn-block {
     padding: auto;
 }
+
+.hiddencol {
+    display: none;
+}

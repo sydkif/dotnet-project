@@ -41,7 +41,7 @@
                 <br />
 
                 <%-- untuk testing --%>
-                <asp:Label ID="tempLabel" runat="server" Text="Temporary Label"></asp:Label>
+                <asp:Label ID="tempLabel" runat="server" Text=""></asp:Label>
 
             </div>
 
